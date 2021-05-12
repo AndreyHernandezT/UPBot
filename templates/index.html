@@ -1,6 +1,6 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -8,20 +8,20 @@
 
 <head>
 	<meta charset="utf-8">
-	<script
+	<!-- <script
 		src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
 	<script
 		src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
 	<script
 		src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
-	<meta charset='UTF-8'>
-	<meta name="robots" content="noindex">
+	<meta charset='UTF-8'> -->
+	<!-- <meta name="robots" content="noindex">
 	<link rel="shortcut icon" type="image/x-icon"
 		href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
 	<link rel="mask-icon" type=""
 		href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg"
 		color="#111" />
-	<link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" />
+	<link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" /> -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet'
 		type='text/css'>
 
@@ -29,9 +29,9 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!------ Include the above in your HEAD tag ---------->
-	<script src="https://use.typekit.net/hoy3lrg.js"></script>
-	<script>try { Typekit.load({ async: true }); } catch (e) { }</script>
-	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+	<!-- <script src="https://use.typekit.net/hoy3lrg.js"></script>
+	<script>try { Typekit.load({ async: true }); } catch (e) { }</script> -->
+	<!-- <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'> -->
 	<link rel='stylesheet prefetch'
 		href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
 
@@ -63,7 +63,7 @@
 
 		.chat_box {
 			width: 400px;
-			height: 80vh;
+			height: 85vh;
 			position: fixed;
 			bottom: 100px;
 			right: 30px;
@@ -114,8 +114,8 @@
 		.messages {
 			height: auto;
 			width: 100%;
-			min-height: calc(100% - 93px);
-			max-height: calc(100% - 93px);
+			min-height: calc(100% - 120px);
+			max-height: calc(100% - 120px);
 			overflow-y: scroll;
 			overflow-x: hidden;
 
@@ -150,36 +150,32 @@
 		}
 
 		::marker {
-			display: none;
-			margin-right: 0px;
-			visibility: hidden;
 			color: #dedede;
 		}
 
 		.botText {
 			background: #9E1B2E;
 			color: #f5f5f5;
-			display: inline-block;
 			padding: 10px 15px;
 			border-radius: 20px;
 			max-width: 205px;
 			line-height: 130%;
 			font-family: "proxima-nova", "Source Sans Pro", sans-serif;
 			font-size: 0.7em;
-
+			margin-left: 15px;
 		}
 
 		.userText {
 			background: #f5f5f5;
 			color: #9E1B2E;
 			float: right;
-			display: inline-block;
 			padding: 10px 15px;
 			border-radius: 20px;
 			max-width: 205px;
 			line-height: 130%;
 			font-family: "proxima-nova", "Source Sans Pro", sans-serif;
 			font-size: 0.7em;
+			margin-right: 15px;
 		}
 
 		#userInput {
@@ -198,6 +194,7 @@
 			float: right;
 			border: none;
 			width: 50px;
+			height: 50px;
 			padding: 12px 0;
 			cursor: pointer;
 			background: #9E1B2E;
@@ -210,7 +207,7 @@
 			float: left;
 			border: none;
 			width: 350px;
-
+			height: 50px;
 			font-size: 0.7em;
 			color: #9E1B2E;
 		}
@@ -225,10 +222,10 @@
 	</style>
 
 	<!-- ChatBot -->
-	<link rel="stylesheet" type="text/css" href="../static/css/jquery.convform.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/jquery.convform.css"> -->
 	<script type="text/javascript" src="../static/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="../static/js/jquery.convform.js"></script>
-	<script type="text/javascript" src="../static/js/custom.js"></script>
+	<!-- <script type="text/javascript" src="../static/js/jquery.convform.js"></script> -->
+	<!-- <script type="text/javascript" src="../static/js/custom.js"></script> -->
 </head>
 
 <body>
@@ -239,7 +236,14 @@
 
 	<div class="chat_box">
 		<div class="encabezado">
-			<i id="icon" class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+			<ul>
+				<li>
+					<img src="../static/images/logoChatSVG.svg">
+				</li>
+				<li>
+					<i id="icon" class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+				</li>
+			</ul>			
 			<p>UPBot</p>
 			<div class="social-media">
 				<i class="fa fa-facebook" aria-hidden="true"></i>
@@ -248,13 +252,10 @@
 			</div>
 		</div>
 		<div class="messages">
-
 			<li class="resChat">
 				<p class="botText">"¡Hola soy UPBot!<br>Estoy aquí para resolver tus dudas e inquietudes.<br>¿Cómo puedo
 					ayudarte?"</p>
 			</li>
-
-
 		</div>
 		<div id="userInput">
 			<div class="wrap">
@@ -267,12 +268,16 @@
 	</div>
 	<!-- ChatBot end -->
 
-	<script
-		src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+	<!-- <script
+		src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script> -->
 	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
-	<script>$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+	<script>
+		// $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 		$(document).ready(function () {
+			$('.chat_icon').click(function() {
+				$('.chat_box').toggleClass('active');
+			});
 			$("form").on("submit", function (event) {
 				var rawText = $("#text").val();
 				if ($.trim(rawText) == '') {
