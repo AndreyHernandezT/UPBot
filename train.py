@@ -1,31 +1,36 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # libraries
 import random
 from keras.optimizers import SGD
 from keras.layers import Dense, Dropout
 from keras.models import load_model
 from keras.models import Sequential
+from pymongo import MongoClient
 import numpy as np
 import pickle
 import json
 import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
-#nltk.download("punkt")
-#nltk.download("wordnet")
-
 
 # init file
 words = []
 classes = []
 documents = []
 ignore_words = ["?", "!"]
-data_file = open("intents.json").read()
-intents = json.loads(data_file)
+# data_file = open("intents.json").read()
+# intents = json.loads(data_file)
+
+#Se conecta la base de datos al servidor
+client = MongoClient('mongodb://localhost:27017/')
+database = client.db_intenciones
+col_intenciones = database.intenciones
 
 # words
-for intent in intents["intents"]:
+for intent in col_intenciones.find():
     for pattern in intent["patterns"]:
-
         # take each word and tokenize it
         w = nltk.word_tokenize(pattern)
         words.extend(w)
@@ -104,7 +109,7 @@ model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy
 # callbacks =[earlystopping]
 
 # fitting and saving the model
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=1000, batch_size=5, verbose=1)
 model.save("chatbot_model.h5", hist)
 print("model created")
 

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # libraries
 import random
 import numpy as np
@@ -7,14 +10,18 @@ from flask import Flask, render_template, request
 from flask_ngrok import run_with_ngrok
 import nltk
 import string
+from pymongo import MongoClient
 from keras.models import load_model
 from nltk.stem import WordNetLemmatizer
+
 lemmatizer = WordNetLemmatizer()
 
-
+client = MongoClient('mongodb://localhost:27017/')
+database = client.db_intenciones
+intents = database.intenciones
 # chat initialization
 model = load_model("chatbot_model.h5")
-intents = json.loads(open("intents.json").read())
+#intents = json.loads(open("intents.json").read())
 words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 
@@ -89,7 +96,7 @@ def predict_class(sentence, model):
 
 def getResponse(ints, intents_json):
     tag = ints[0]["intent"]
-    list_of_intents = intents_json["intents"]
+    list_of_intents = intents_json.find() # Alert
     for i in list_of_intents:
         if i["tag"] == tag:
             result = random.choice(i["responses"])
